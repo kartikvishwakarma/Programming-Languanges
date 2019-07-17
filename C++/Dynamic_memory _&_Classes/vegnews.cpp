@@ -19,20 +19,21 @@ int main(){
 		cout << "headline2: " << headline2 << endl;
 		cout << "sports: " << sports << endl;
 		
-		callme1(headline1);
+		callme1(headline1); 
 		cout << "headline1: " << headline1 << endl;
-		callme2(headline2);
+		
+		callme2(headline2); // copy constructor called
 		cout << "headline2: " << headline2 << endl;
 		
 		cout << "Initialize one object to another: \n";
-		StringBad sailor = sports;
+		StringBad sailor = sports; // copy constructor
 		cout << "sailor: " << sailor << endl;
 
 		cout << "Assign one object to another: \n";
-		StringBad knot;
-		knot = headline1;
+		StringBad knot;	// default constructor called
+		knot = headline1;	// assignment operator called
 		cout << "knot: " << knot << endl;
-
+		
 		cout << "Exiting the block.\n";
 	}
 	cout << "End of main()\n";

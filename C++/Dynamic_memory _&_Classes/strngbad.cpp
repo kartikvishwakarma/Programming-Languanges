@@ -29,6 +29,27 @@ StringBad::~StringBad(){
 	delete [] str;
 }
 
+StringBad::StringBad(const StringBad & st)
+{
+	num_strings++;
+	len = st.len;
+	str = new char[len+1];
+	std::strcpy(str, st.str);
+	cout << num_strings << " :\" " << str << " \"object created because of copy constructor.\n";
+}
+
+StringBad & StringBad::operator=(const StringBad & st)
+{
+	std::cout << "assignment operator called. \n";
+	if(this == &st)
+		return *this;
+	delete [] str;
+	len = st.len;
+	str = new char[len+1];
+	std::strcpy(str, st.str);
+	return *this;
+}
+
 std::ostream& operator<<(std::ostream & os, const StringBad & st)
 {
 	os << st.str;
